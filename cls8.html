@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="checkAccess()">Check Access</button>
+
+    <p id="output"></p>
+
+    <script>
+        function checkAccess() {
+
+            let user = {
+                name: "Sivani",
+                age: 20,
+                isAdmin: true
+            };
+            let ageExists = "age" in user;
+            let accessMessage =
+                (user.age >= 18 && user.isAdmin)
+                    ? "Access Granted"
+                    : "Access Denied";
+            delete user.age;
+            document.getElementById("output").innerHTML =
+                "Age property exists: " + ageExists + "<br>" +
+                accessMessage + "<br>" +
+                "User object after deleting age: " +
+                
+        }
+    </script>
+
+</body>
+
+</html>
