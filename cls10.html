@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let mysteryLevel = Math.floor(Math.random() * 50) + 1;
+
+        let scoreString = "45";
+        let score = Number(scoreString);
+
+        let difference = Math.abs(mysteryLevel - score);
+        let squareRoot = Math.sqrt(score);
+        let piValue = Math.PI;
+        let result = "20" * 5;
+
+        let highest = Math.max(10, 20, mysteryLevel);
+        let lowest = Math.min(10, 20, mysteryLevel);
+
+        console.log("Mystery Level:", mysteryLevel);
+        console.log("User Score:", score);
+        console.log("Difference:", difference);
+        console.log("Square Root:", squareRoot);
+        console.log("Pi Value:", piValue);
+        console.log('"20" * 5 =', result);
+        console.log("Highest Value:", highest);
+        console.log("Lowest Value:", lowest);
+    </script>
+</body>
+
+</html>
