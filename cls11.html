@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Arrays of product names and prices
+        let products = ["Apple", "Banana", "Orange", "Mango"];
+        let prices = [50, 30, 60, 70];
+
+        // Merge product names and prices
+        let productList = [];
+
+        for (let i = 0; i < products.length; i++) {
+            productList.push(`Product: ${products[i]} - Price: ${prices[i]}`);
+        }
+
+        // Display all product entries
+        console.log("All Products:");
+        for (let item of productList) {
+            console.log(item);
+        }
+
+        // Filter and show products with prices greater than 50
+        console.log("\nProducts with Price Greater Than 50:");
+        for (let i = 0; i < products.length; i++) {
+            if (prices[i] > 50) {
+                console.log(`Product: ${products[i]} - Price: ${prices[i]}`);
+            }
+        }
+
+        // Add a new product
+        products.push("Watermelon");
+        prices.push(80);
+
+        // Display updated product list
+        console.log("\nUpdated Product List:");
+        for (let i = 0; i < products.length; i++) {
+            console.log(`Product: ${products[i]} - Price: ${prices[i]}`);
+        }
+    </script>
+</body>
+
+</html>
