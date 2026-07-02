@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="date" id="dateInput">
+    <button onclick="showReminder()">Check</button>
+    <p id="result"></p>
+    <script>
+        function showReminder() {
+            let inputDate = document.getElementById("dateInput").value;
+
+            if (!inputDate) {
+                document.getElementById("result").innerHTML = "Please select a date.";
+                return;
+            }
+
+            let date = new Date(inputDate);
+
+            let year = date.getFullYear();
+            let day = date.getDate();
+
+            let monthNames = [
+                "January", "February", "March", "April",
+                "May", "June", "July", "August",
+                "September", "October", "November", "December"
+            ];
+
+            let monthName = monthNames[date.getMonth()];
+
+            let today = new Date();
+            let yearsPassed = today.getFullYear() - year;
+
+            if (
+                today.getMonth() < date.getMonth() ||
+                (today.getMonth() === date.getMonth() &&
+                    today.getDate() < date.getDate())
+            ) {
+                yearsPassed--;
+            }
+
+            let message;
+            if (yearsPassed >= 1) {
+                message = "It has been more than a year since that date.";
+            } else {
+                message = "It has been less than a year since that date.";
+            }
+
+            document.getElementById("result").innerHTML =
+                "Year: " + year + "<br>" +
+                "Month: " + monthName + "<br>" +
+                "Day: " + day + "<br>" +
+                "Full Years Passed: " + yearsPassed + "<br>" +
+                message;
+        }
+    </script>
+</body>
+
+</html>
